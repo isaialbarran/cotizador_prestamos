@@ -6,9 +6,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgba(255,175,75,1);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#resultado{
+    margin: 0px auto;
+    border: 1px solid black;
+    width: 40%;
+    margin-top: 5%;
+}
+
+/*Hacer el botón disabled*/
+input [type="submit"]:disabled{
+  opacity: 0.2;
 }
