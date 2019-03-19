@@ -9,25 +9,26 @@ import Spinner from "./Spinner";
 class App extends Component {
 
   state = {
-    cantidad : '',
-    meses : '',
     total : '',
-    cargando: false
+    cargando: false,
+    propertyPrice : '',
+    moneyForClient: '',
+    yearsToPay: ''
   };
 
-  dataLoan = (cantidad,meses) => {
-    const total = totalAmount(cantidad,meses);
+  dataLoan = (moneyForClient,yearsToPay) => {
+    const total = totalAmount(moneyForClient,yearsToPay);
     this.setState({
-      cargando : true
+      cargando:true
     }, () => {
       setTimeout(() => {
-        this.setState({cantidad,meses,total, cargando:false})
+        this.setState({moneyForClient, yearsToPay, total, cargando:false})
       },2000)
     })
   };
 
   render() {
-    const {cantidad,meses,total,cargando} = this.state;
+    const {moneyForClient, yearsToPay, total, cargando} = this.state;
     let componente;
 
     if(total === '' && !cargando){
@@ -37,21 +38,17 @@ class App extends Component {
       componente = <Spinner/>
     }
     else{
-      componente =  <Resultado
-              cantidad={cantidad}
-              meses={meses}
-              total={total}/>
+      componente =  <Resultado  moneyForClient={moneyForClient}
+                                yearsToPay={yearsToPay}
+                                total={total}/>
     }
 
     return (
       <Fragment >
         <div className="App">
-          <Formulario
-              dataLoan={this.dataLoan}/>
+          <Formulario dataLoan={this.dataLoan}/>
         </div>
-        <div className="App">
-          {componente}
-        </div>
+        <div className="App">{componente}</div>
       </Fragment>
     );
   }

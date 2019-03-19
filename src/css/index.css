@@ -14,14 +14,35 @@ code {
     monospace;
 }
 
+/*My CSS*/
 #resultado{
-    margin: 0px auto;
+    margin: 3% auto;
     border: 1px solid black;
     width: 40%;
-    margin-top: 5%;
 }
-
-/*Hacer el botón disabled*/
+/*Make the button disabled*/
 input [type="submit"]:disabled{
   opacity: 0.2;
+}
+/*Style to div which contains my range*/
+#col-order{
+    border: 1px solid black;
+    width: 50%;
+    margin: 0 auto 1%;
+}
+/*Range*/
+#rangeDiv{
+    margin: 3% auto;
+}
+#range{
+    display: block;
+    margin: 0px auto;
+    width: 60%;
+}
+#rangeMin{
+    display: inline;
+    margin-right: 35%;
+}
+#rangeMax{
+    display: inline;
 }

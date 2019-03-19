@@ -1,45 +1,51 @@
-export function totalAmount(cantidad,meses) {
+//Function helper to separate the code (Logic)
+
+export function totalAmount(moneyForClient,yearsToPay) {
     /*Cantidad
-    * 0 a 1000      => 25%
-    * 1001 a 5000   => 20%
-    * 5001 a 10000  => 15%
-    * 10001         => 10%*/
+    * 50000 a 100000      => 25%
+    * 100001 a 200000   => 20%
+    * 200001 a 300000  => 15%
+    * 300001         => 10%*/
     let cantidadTotal;
 
-    if(cantidad <= 1000){
-        cantidadTotal = cantidad * 0.25
-    }else if (cantidad > 1000 && cantidad <= 5000){
-        cantidadTotal = cantidad * 0.2
+    if(moneyForClient <= 50000 && moneyForClient >= 100000 )
+    {
+        cantidadTotal = moneyForClient * 0.25
     }
-    else if (cantidad > 5000 && cantidad <= 10000){
-        cantidadTotal = cantidad * 0.15
+    else if (moneyForClient >= 100001 && moneyForClient <= 200000)
+    {
+        cantidadTotal = moneyForClient * 0.2
     }
-    else{
-        cantidadTotal = cantidad * 0.1
+    else if (moneyForClient >= 200001 && moneyForClient <= 300000)
+    {
+        cantidadTotal = moneyForClient * 0.15
+    }
+    else
+        {
+        cantidadTotal = moneyForClient * 0.1
     }
 
-    let totalMeses;
-    /*Meses
-    * 3     => 5%
-    * 6     => 10%
-    * 12    => 15%
-    * 24    => 20%
+    let totalYears;
+    /*years
+    * 9 - 12     => 5%
+    * 13 - 20     => 10%
+    * 21 - 30    => 15%
+    * 31        => 20%
     * */
-    switch (meses) {
-        case 3:
-            totalMeses = cantidad * 0.05;
-            break;
-        case 6:
-            totalMeses = cantidad * 0.1;
-            break;
-        case 12:
-            totalMeses = cantidad * 0.15;
-            break;
-        case 24:
-            totalMeses = cantidad * 0.2;
-            break;
-        default:
-            break;
+    if(yearsToPay >= 9 && yearsToPay<=12)
+    {
+        totalYears = moneyForClient * 0.05;
     }
-    return cantidad + totalMeses + cantidadTotal;
+    else if(yearsToPay >=13 && yearsToPay <=20)
+    {
+        totalYears = moneyForClient * 0.1;
+    }
+    else if(yearsToPay >=21 && yearsToPay <=30)
+    {
+        totalYears = moneyForClient * 0.15;
+    }
+    else {
+        totalYears = moneyForClient * 0.2;
+    }
+    return moneyForClient + totalYears + cantidadTotal;
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Mensaje = () => {
     return (
-      <p>Agrega una cantidad y un plazo para pagar</p>
+      <p>Seleccione el precio de la vivienda y el plazo a pagar</p>
     );
 };
 
