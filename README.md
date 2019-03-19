@@ -1,5 +1,5 @@
-This is a Project from JavaScript Moderno.
+This is a project from JavaScript Moderno by Udemy. I changed some parts to make it kind different.   
 
-Technology - React
+Technology - React / JavaScript / HTML / CSS
 
-https://nervous-nobel-f4ce89.netlify.com/
+https://gallant-poitras-7792df.netlify.com/
